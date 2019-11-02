@@ -126,11 +126,11 @@
       <Version>7.2.0.1367</Version>
     </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\RadioButton\RadioButton.csproj">
-      <Project>{17C1A99C-2DEF-4319-8802-A851C2709EA0}</Project>
+      <Project>{2FBA6F8C-B042-435A-9BF5-9020B8157523}</Project>
       <Name>RadioButton</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

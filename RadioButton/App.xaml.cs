@@ -2,6 +2,7 @@
 using Prism;
 using Prism.Ioc;
 using RadioButton.ViewModels;
+using RadioButton.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
