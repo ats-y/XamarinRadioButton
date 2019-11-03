@@ -14,18 +14,17 @@
 
         <CheckBox x:Name="Check1"
                   CheckedChanged="OnChangeCheckbox"
-                  IsChecked="False">
-
-        </CheckBox>
+                  IsChecked="{Binding IsChecked1.Value}"/>
 
         <CheckBox x:Name="Check2"
-                  IsChecked="True"
-                  CheckedChanged="OnChangeCheckbox"/>
+                  CheckedChanged="OnChangeCheckbox"
+                  IsChecked="{Binding IsChecked2.Value}"/>
 
         <CheckBox x:Name="Check3"
-                  IsChecked="True"
-                  CheckedChanged="OnChangeCheckbox"/>
+                  CheckedChanged="OnChangeCheckbox"
+                  IsChecked="{Binding IsChecked3.Value}"/>
 
-
+        <Button Text="test"
+                Command="{Binding TestCommand}"/>
     </StackLayout>
 </ContentPage>
