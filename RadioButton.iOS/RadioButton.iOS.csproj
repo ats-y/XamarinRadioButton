@@ -125,6 +125,9 @@
     <PackageReference Include="Prism.Unity.Forms">
       <Version>7.2.0.1367</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.2.0.223</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RadioButton\RadioButton.csproj">

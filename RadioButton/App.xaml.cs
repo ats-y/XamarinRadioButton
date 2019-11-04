@@ -3,6 +3,8 @@ using Prism;
 using Prism.Ioc;
 using RadioButton.ViewModels;
 using RadioButton.Views;
+using Rg.Plugins.Popup.Contracts;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,6 +36,8 @@ namespace RadioButton
 
             // View「MainPage」ViewModels「MainPageViewModel」を登録する。
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+
+            containerRegistry.RegisterInstance<IPopupNavigation>(PopupNavigation.Instance);
         }
     }
 }

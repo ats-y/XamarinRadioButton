@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Prism.Navigation;
+using RadioButton.Views;
 using Reactive.Bindings;
+using Rg.Plugins.Popup.Contracts;
+using Rg.Plugins.Popup.Services;
 
 namespace RadioButton.ViewModels
 {
@@ -12,12 +16,28 @@ namespace RadioButton.ViewModels
         public ReactiveProperty<bool> IsChecked3 { get; set; } = new ReactiveProperty<bool>();
         public ReactiveCommand TestCommand { get; set; }
 
-        public MainPageViewModel()
+        private IPopupNavigation _popupNavigation;
+
+        public MainPageViewModel(IPopupNavigation popupNavigation)
         {
+            _popupNavigation = popupNavigation;
+
             TestCommand = new ReactiveCommand();
-            TestCommand.Subscribe( _=>
+            TestCommand.Subscribe( async _ =>
             {
                 Debug.WriteLine("Testボタンタップ");
+
+                TrialPopupPage popup = new TrialPopupPage();
+
+                popup.BindingContext = new TrialPopupPage.ContentData
+                {
+                    DisplayMessage = "abc",
+                };
+
+                Task popTask = _popupNavigation.PushAsync(popup);
+                await popTask.ConfigureAwait(false);
+
+                Debug.WriteLine("Testボタンタップ おわり");
             });
         }
 
